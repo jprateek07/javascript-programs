@@ -6,10 +6,10 @@
     <title>Basic</title>
 </head>
 <body>
-    <h1></h1>
+    <h1 id="demo"></h1>
 <script>
    const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
+    document.getElementById("demo").innerHTML="Given string is"+characters
     function generateString(length) {
         let result = ' ';
         const charactersLength = characters.length;

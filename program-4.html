@@ -9,10 +9,10 @@
     <h1></h1>
     <script>
     function checkEmail() {
-        var email = "prateek@gmail.com"
+        var email = prompt('Enter email address')
         var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;    
         if (!filter.test(email)) {
-        alert('Please provide a valid email address');
+        alert('Invalid email address');
         }
         else{
             alert('valid email')
