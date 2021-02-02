@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number is float or integer</title>
+</head>
+<body>
+    <button onclick="checkNumber()">Check</button>
+    <h1 id="demo"></h1>
+<script>
+    let x=10.5
+    function checkNumber() {
+if(typeof x == 'number' && !isNaN(x)){
+    if (Number.isInteger(x)) {
+        alert(x+" is integer.");
+    }
+    else {
+        alert(x+ " is a float value.");
+    }
+
+} else {
+    alert(x+ " is not a number");
+}
+}
+</script>
+</body>
+</html>
