@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove specific item from an array</title>
+</head>
+<body>
+    <h1>Remove specific item from array</h1>
+    <h1 id="demo"></h1>
+    <button onclick="removeItem()">Remove</button>
+    <script>
+        const array = [2, 5, 9];
+        document.getElementById("demo").innerHTML=array
+        function  removeItem(){
+            const index = array.indexOf(5);
+            if (index > -1) {
+            array.splice(index, 1);
+            document.getElementById("demo").innerHTML=array
+            }
+        }
+
+    </script>
+</body>
+</html>
