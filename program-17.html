@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>merge two array and remove duplicates</title>
+</head>
+<body>
+    <button onclick="getUniqueAfterMerge()">Merge</button>
+    <h1 id="arr1"></h1>
+    <h1 id="arr2"></h1>
+    <h1 id="result"></h1>
+<script>
+    const array1 = [1, 2, 3]
+    const array2 = [2, 3, 5]
+    document.getElementById("arr1").innerHTML=array1
+    document.getElementById("arr2").innerHTML=array2
+    function getUniqueAfterMerge(arr1, arr2){
+    let arr = [...array1, ...array2];
+    let uniqueArr = [...new Set(arr)];
+    document.getElementById("result").innerHTML= "After merge:"+uniqueArr
+}
+</script>
+</body>
+</html>
