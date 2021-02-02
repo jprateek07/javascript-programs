@@ -3,17 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Basic</title>
 </head>
 <body>
-    <h1></h1>
+    <div class="container mt-md-5">
+        <h1>JavaScript Program to Format Numbers as Currency Strings</h1>
+        <div class="form-group">
+            <label for="numb">Enter a number</label>
+            <input type="number" class="form-control" id="numb" required>
+        </div>
+       <button type="submit" onclick="convertCurrency()" class="btn btn-default">Convert</button>
+       <h1 id="result"></h1>
+    </div>
 <script>
-    let currency=prompt('enter a number')
-    const result =  currency.toLocaleString('en-IN', {
-    style: 'currency',
-    currency: 'INR'
-});
-alert(result);
+    function convertCurrency()
+    {
+        let currency=parseInt(document.getElementById("numb").value);
+        const result =  currency.toLocaleString('en-IN', {
+        style: 'currency',
+        currency: 'INR'
+       });
+       if(isNaN(currency))
+       {
+            document.getElementById("result").innerHTML="Input is invalid"    
+       }
+       else{
+       document.getElementById("result").innerHTML=result
+       }
+    }
 </script>
 </body>
 </html>
