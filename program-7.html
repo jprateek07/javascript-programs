@@ -9,6 +9,9 @@
     <h1 id="demo"></h1>
 <script>
 const stripped = '    My String With A    Lot Whitespace  '.replace(/\s+/g, '')  
+// \s: matches any whitespace symbol: spaces, tabs, and line breaks
+// +: match one ore more of the preceding tokens (referencing \s)
+// g: the g at the end indicates iterative searching throughout the full string
 document.getElementById("demo").innerHTML=stripped
 </script>
 </body>
