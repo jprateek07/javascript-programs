@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remove duplicate from array</title>
-</head>
-<body>
-    <h1 id="demo"></h1>
-<script>
-function getUnique(arr){ 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <title>Basic</title>
+      </head>
+      <body>
+        <div class="container mt-md-5">
+            <h1>JavaScript Program to Remove Duplicates From Array</h1>
+            <div class="form-group">
+                <label for="arr">Enter array values with comma separated:</label>
+                <input type="text" class="form-control" id="arr" required>
+            </div>
+            <button type="submit" onclick=" getUnique()" class="btn btn-success">Submit</button>
+            <h1 id="input"></h1>
+            <h1 id="object"></h1>
+            <h1 id="result"></h1>
+        </div>
+      <script>
+function getUnique(){ 
     //first method    
     // let uniqueArr = [];
     // for(let i of arr) {        
@@ -17,12 +28,12 @@ function getUnique(arr){
     //     }
     // }
     //second method
-    arr=[...new Set(arr)]
-    alert(arr)
-    document.getElementById("demo").innerHTML=uniqueArr;
+    var array = document.getElementById("arr").value
+    var input = array.split(",");
+    document.getElementById("input").innerHTML="INPUT ARRAY IS: "+input
+    var uniqueArr=[...new Set(input)]
+    document.getElementById("result").innerHTML=uniqueArr;
 }
-const array = [1, 2, 3, 2, 3,1,1,4];
-getUnique(array);
 </script>
 </body>
 </html>

@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <title>Basic</title>
-    </head>
-    <body>
-        <div class="container mt-md-5">
-            <h1>JavaScript Program to Insert Item in an Array</h1>
-            <div class="form-group">
-                <label for="arr">Enter array values with comma separated:</label>
-                <input type="text" class="form-control" id="arr" required>
-            </div>
-            <div class="form-group">
-                <label for="item">Enter object to be added:</label>
-                <input type="text" class="form-control" id="obj" required>
-            </div>
-           <button type="submit" onclick="insertObject()" class="btn btn-success">Submit</button>
-           <h1 id="input"></h1>
-           <h1 id="object"></h1>
-           <h1 id="result"></h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Basic</title>
+</head>
+<body>
+    <div class="container mt-md-5">
+        <h1>JavaScript Program to Insert Item in an Array</h1>
+        <div class="form-group">
+            <label for="arr">Enter array values with comma separated:</label>
+            <input type="text" class="form-control" id="arr" required>
         </div>
+        <div class="form-group">
+            <label for="item">Enter object to be added:</label>
+            <input type="text" class="form-control" id="obj" required>
+        </div>
+        <button type="submit" onclick="insertObject()" class="btn btn-success">Submit</button>
+        <h1 id="input"></h1>
+        <h1 id="object"></h1>
+        <h1 id="result"></h1>
+    </div>
 <script>
-    function insertObject() {
-        var array = document.getElementById("arr").value
-        var obj = document.getElementById("obj").value
-        var input = array.split(",");
-        document.getElementById("input").innerHTML="INPUT ARRAY IS: "+input
-        var object=JSON.stringify(obj)
-        document.getElementById("object").innerHTML="OBJECT TO BE ADDED: "+object
-        input.push(object);
-        document.getElementById("result").innerHTML="OUTPUT ARRAY: "+input
+function insertObject() {
+    var array = document.getElementById("arr").value
+    var obj = document.getElementById("obj").value
+    var input = array.split(",");
+    document.getElementById("input").innerHTML="INPUT ARRAY IS: "+input
+    var object=JSON.stringify(obj)
+    document.getElementById("object").innerHTML="OBJECT TO BE ADDED: "+object
+    input.push(object);
+    document.getElementById("result").innerHTML="OUTPUT ARRAY: "+input
 }
 </script>
 </body>

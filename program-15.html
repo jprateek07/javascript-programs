@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <title>Basic</title>
+</head>
 <body>
-
-<p>Click the button to add elements to the beginning of the array.</p>
-
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-
+  <div class="container mt-md-5">
+      <h1>JavaScript Program to Add Element to Start of an Array</h1>
+      <div class="form-group">
+          <label for="arr">Enter array values with comma separated:</label>
+          <input type="text" class="form-control" id="arr" required>
+      </div>
+      <div class="form-group">
+          <label for="item">Enter item to be added:</label>
+          <input type="text" class="form-control" id="item" required>
+      </div>
+      <button type="submit" onclick=" myFunction()" class="btn btn-success">Submit</button>
+      <h1 id="input"></h1>
+      <h1 id="object"></h1>
+      <h1 id="result"></h1>
+  </div>
 <script>
 var names = ["prateek", "ujwal", "gourank"];
 document.getElementById("demo").innerHTML = names;
 
-function myFunction() {
-  names.unshift("pradeep");
-  document.getElementById("demo").innerHTML = names;
+function myFunction() {  
+    var array = document.getElementById("arr").value
+    var item = document.getElementById("item").value
+    var input = array.split(",");
+    document.getElementById("input").innerHTML="INPUT ARRAY IS: "+input
+    document.getElementById("object").innerHTML="ITEM TO BE ADDED: "+item
+  input.unshift(item);
+  document.getElementById("result").innerHTML = input;
 }
 </script>
 </body>
