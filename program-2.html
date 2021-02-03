@@ -4,15 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1></h1>
+    <div class="container mt-md-5">
+        <h1>Javascript Program to Generate a Random Number Between Two Numbers</h1>
+        <div class="form-group">
+            <label for="numb">Enter minimum number</label>
+            <input type="number" class="form-control" id="num1" required>
+        </div>
+        <div class="form-group">
+            <label for="numb">Enter maximum number</label>
+            <input type="number" class="form-control" id="num2" required>
+        </div>
+       <button type="submit" onclick="check()" class="btn btn-success">Submit</button>
+       <h1 id="result"></h1>
+    </div>
+    <h1 id="demo" class="text-center"></h1>
 <script> 
-    let min,max
-    min=prompt('enter first number')
-    max=prompt('enter second number')
-    const a=Math.floor(Math.random()*max+min)
-    alert(a)
+    function check(){
+        let min,max
+        min=parseInt(document.getElementById("num1").value)
+        max=parseInt(document.getElementById("num2").value)
+        if(max<min){
+            document.getElementById("demo").innerHTML="Invalid input"
+        }
+         else if(isNaN(a))
+        {
+            document.getElementById("demo").innerHTML='Please enter a valid number'
+        }
+        else{
+            const a=Math.floor(Math.random()*(max-min+1))+min
+            document.getElementById("demo").innerHTML="Output :"+a
+        }
+    }
 </script>
 </body>
 </html>

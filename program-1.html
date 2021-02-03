@@ -3,16 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Basic</title>
 </head>
 <body>
-    <h1></h1>
+    <div class="container mt-md-5">
+        <h1>JavaScript Program To Check If A Variable Is undefined or null</h1>
+        <div class="form-group">
+            <label for="numb">Enter a value</label>
+            <input type="text" class="form-control" id="numb" required>
+        </div>
+       <button type="submit" onclick="check()" class="btn btn-success">Submit</button>
+       <h1 id="result"></h1>
+    </div>
 <script>
-    let name
-    if(name === undefined || name === null) 
-    {
-    alert('variable is undefined or null')
-    }
+    function check(){
+        var name=document.getElementById("numb").value
+        if(name === undefined || name === null || name.length==0) 
+        {
+            document.getElementById("result").innerHTML="variable is undefined or null"
+        }
+        else{
+            document.getElementById("result").innerHTML=name
+        }
+}
 </script>
 </body>
 </html>

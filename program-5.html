@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Basic</title>
 </head>
 <body>
-    <h1 id="demo"></h1>
+    <div class="container">
+        <h1>JavaScript Program to Generate a Range of Numbers and Characters</h1>
+    <h2 id="str"></h2>
+    <h2 id="demo"></h2>
+    </div>
 <script>
-   const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    document.getElementById("demo").innerHTML="Given string is"+characters
-    function generateString(length) {
+    let str ="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    document.getElementById("str").innerHTML="INPUT: "+str
+    function generateString(len) {
         let result = ' ';
-        const charactersLength = characters.length;
-        for ( let i = 0; i < length; i++ ) {
-            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        const charactersLength = str.length;
+        for ( let i = 0; i < len; i++ ) {
+            result += str.charAt(Math.floor(Math.random() * charactersLength));
         }
-
-        return result;
-    }
-  
-    alert(generateString(5));
+        document.getElementById("demo").innerHTML="OUTPUT is: "+result
+    }  
+    generateString(5);
 </script>
 </body>
 </html>

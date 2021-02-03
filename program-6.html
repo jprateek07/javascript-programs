@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Number is float or integer</title>
 </head>
 <body>
-    <button onclick="checkNumber()">Check</button>
-    <h1 id="demo"></h1>
+    <div class="container mt-md-5">
+        <h1>JavaScript Program to Check if a Number is Float or Integer</h1>
+        <div class="form-group">
+            <label for="numb">Enter a number</label>
+            <input type="number" class="form-control" id="numb" required>
+        </div>
+       <button type="submit" onclick="checkNumber()" class="btn btn-success">Submit</button>
+       <h1 id="result"></h1>
+    </div>
 <script>
-    let x=10.5
     function checkNumber() {
-if(typeof x == 'number' && !isNaN(x)){
-    if (Number.isInteger(x)) {
-        alert(x+" is integer.");
-    }
-    else {
-        alert(x+ " is a float value.");
-    }
-
-} else {
-    alert(x+ " is not a number");
-}
+        let x=document.getElementById("numb").value
+        if (x%1==0) {
+            document.getElementById("result").innerHTML=x+" is integer."
+        }
+        else {
+            document.getElementById("result").innerHTML=x+ " is a float value.";
+        }
 }
 </script>  
 </body>
