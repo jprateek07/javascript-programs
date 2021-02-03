@@ -3,23 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remove specific item from an array</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Basic</title>
 </head>
 <body>
-    <h1>Remove specific item from array</h1>
-    <h1 id="demo"></h1>
-    <button onclick="removeItem()">Remove</button>
+    <div class="container mt-md-5">
+        <h1>JavaScript Program to Remove Specific Item From an Array</h1>
+        <div class="form-group">
+            <label for="arr">Enter array values with comma separated:</label>
+            <input type="text" class="form-control" id="arr" required>
+        </div>
+        <div class="form-group">
+            <label for="item">Enter item to be removed:</label>
+            <input type="text" class="form-control" id="item" required>
+        </div>
+       <button type="submit" onclick="removeItem()" class="btn btn-success">Submit</button>
+       <h1 id="input"></h1>
+       <h1 id="result"></h1>
+    </div>
     <script>
-        const array = [2, 5, 9];
-        document.getElementById("demo").innerHTML=array
         function  removeItem(){
-            const index = array.indexOf(5);
+            var arr = document.getElementById("arr").value
+            var item = document.getElementById("item").value
+            var input = arr.split(",");
+            document.getElementById("input").innerHTML="INPUT ARRAY IS: "+input
+            const index = input.indexOf(item);
             if (index > -1) {
-            array.splice(index, 1);
-            document.getElementById("demo").innerHTML=array
+            input.splice(index, 1);
+            document.getElementById("result").innerHTML=input
             }
             else{
-                alert('element not found')
+                document.getElementById("result").innerHTML="ELEMENT NOT FOUND"
             }
         }
 

@@ -6,11 +6,13 @@
     <title>Date to number</title>
 </head>
 <body>
-    <h1></h1>
+    <h1 id="curr"></h1>
+    <h1 id="num"></h1>
 <script>
     const d1 = new Date();
     const result = d1.getTime();
-    alert(result);
+    document.getElementById("curr").innerHTML="INPUT: "+d1
+    document.getElementById("num").innerHTML="OUTPUT: "+result
 </script>
 </body>
 </html>
