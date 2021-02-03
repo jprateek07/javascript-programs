@@ -9,19 +9,21 @@
     <body>
         <div class="container mt-md-5">
             <h1>JavaScript Program to Insert Item in an Array</h1>
+            <form action="#">
             <div class="form-group">
                 <label for="arr">Enter array values with comma separated:</label>
-                <input type="text" class="form-control" id="arr" required>
+                <input type="text" class="form-control" id="arr" >
             </div>
             <div class="form-group">
                 <label for="item">Enter item to be added:</label>
-                <input type="text" class="form-control" id="item" required>
+                <input type="text" class="form-control" id="item" >
             </div>
             <div class="form-group">
-                <label for="item">Enter position:</label>
-                <input type="text" class="form-control" id="position" required>
+                <label for="position">Enter position:</label>
+                <input type="number" class="form-control" id="position" min="1" >
             </div>
            <button type="submit" onclick="addItem()" class="btn btn-success">Submit</button>
+        </form>
            <h1 id="input"></h1>
            <h1 id="result"></h1>
         </div>
@@ -30,6 +32,10 @@
         var array = document.getElementById("arr").value
         var item = document.getElementById("item").value
         var position = document.getElementById("position").value
+        if (position<1) {
+            document.getElementById("result").innerHTML = "OUTPUT: Position is invalid";
+            return
+         }
         var input = array.split(",");
         document.getElementById("input").innerHTML="INPUT ARRAY IS: "+input
         input.splice(position-1, 0, item);
