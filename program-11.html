@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insert item in an array</title>
-</head>
-<body>
-    <button onclick="insertElement()">add item</button>
-    <h1 id="demo"></h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <title>Basic</title>
+    </head>
+    <body>
+        <div class="container mt-md-5">
+            <h1>JavaScript Program to Insert Item in an Array</h1>
+            <div class="form-group">
+                <label for="arr">Enter array values with comma separated:</label>
+                <input type="text" class="form-control" id="arr" required>
+            </div>
+            <div class="form-group">
+                <label for="item">Enter item to be added:</label>
+                <input type="text" class="form-control" id="item" required>
+            </div>
+            <div class="form-group">
+                <label for="item">Enter position:</label>
+                <input type="text" class="form-control" id="position" required>
+            </div>
+           <button type="submit" onclick="addItem()" class="btn btn-success">Submit</button>
+           <h1 id="input"></h1>
+           <h1 id="result"></h1>
+        </div>
 <script>
-    document.getElementById("demo").innerHTML=array;
-    function insertElement() {
-    var array = [1, 2, 3, 4, 5];
-    var index = 3;
-    var element = 8;  
-    array.splice(index, 0, element);
-    document.getElementById("demo").innerHTML=array
+    function addItem() {
+        var array = document.getElementById("arr").value
+        var item = document.getElementById("item").value
+        var position = document.getElementById("position").value
+        var input = array.split(",");
+        document.getElementById("input").innerHTML="INPUT ARRAY IS: "+input
+        input.splice(position-1, 0, item);
+        document.getElementById("result").innerHTML="OUTPUT ARRAY: "+input
 }
 
 </script>
