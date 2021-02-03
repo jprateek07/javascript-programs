@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>merge two array and remove duplicates</title>
-</head>
-<body>
-    <button onclick="getUniqueAfterMerge()">Merge</button>
-    <h1 id="arr1"></h1>
-    <h1 id="arr2"></h1>
-    <h1 id="result"></h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <title>Basic</title>
+      </head>
+      <body>
+        <div class="container mt-md-5">
+            <h1>JavaScript Program to Add Element to Start of an Array</h1>
+            <div class="form-group">
+                <label for="arr1">Enter first array values with comma separated:</label>
+                <input type="text" class="form-control" id="arr1" required>
+            </div>
+            <div class="form-group">
+                <label for="arr2">Enter second array values with comma separated:</label>
+                <input type="text" class="form-control" id="arr2" required>
+            </div>
+            <button type="submit" onclick=" getUniqueAfterMerge()" class="btn btn-success">Submit</button>
+            <h1 id="input1"></h1>
+            <h1 id="input2"></h1>
+            <h1 id="result"></h1>
+        </div>
 <script>
-    const array1 = [1, 2, 3]
-    const array2 = [2, 3, 5]
-    document.getElementById("arr1").innerHTML=array1
-    document.getElementById("arr2").innerHTML=array2
     function getUniqueAfterMerge(arr1, arr2){
-    let arr = [...array1, ...array2];
-    let uniqueArr = [...new Set(arr)];
-    document.getElementById("result").innerHTML= "After merge:"+uniqueArr
+        var array = document.getElementById("arr1").value
+        var input1 = array.split(",");
+        var array = document.getElementById("arr2").value
+        var input2 = array.split(",");
+        document.getElementById("input1").innerHTML="First array: "+input1
+        document.getElementById("input2").innerHTML="Second arrary: "+input2
+        let arr = [...input1, ...input2];
+        let uniqueArr = [...new Set(arr)];
+        document.getElementById("result").innerHTML= "After merge: "+uniqueArr
 }
 </script>
 </body>

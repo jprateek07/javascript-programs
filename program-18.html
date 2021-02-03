@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <title>Basic</title>
-</head>
-<body>
-    <div class="container mt-md-5">
-        <h1>JavaScript Program to Format Numbers as Currency Strings</h1>
-        <div class="form-group">
-            <label for="numb">Enter a number</label>
-            <input type="number" class="form-control" id="numb" required>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <title>Basic</title>
+      </head>
+      <body>
+        <div class="container mt-md-5">
+            <h1>JavaScript Program to Format Numbers as Currency Strings</h1>
+            <div class="form-group">
+                <label for="number">Enter number</label>
+                <input type="text" class="form-control" id="numb" required>
+            </div>
+            <button type="submit" onclick=" convertCurrency()" class="btn btn-success">Submit</button>
+            <h1 id="input1"></h1>
+            <h1 id="result"></h1>
         </div>
-       <button type="submit" onclick="convertCurrency()" class="btn btn-success">Convert</button>
-       <h1 id="result"></h1>
-    </div>
 <script>
     function convertCurrency()
     {
@@ -29,7 +30,7 @@
             document.getElementById("result").innerHTML="Input is invalid"    
        }
        else{
-       document.getElementById("result").innerHTML=result
+            document.getElementById("result").innerHTML=result
        }
     }
 </script>
