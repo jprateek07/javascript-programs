@@ -9,21 +9,36 @@
 <body>
     <div class="container">
         <h1>JavaScript Program to Generate a Range of Numbers and Characters</h1>
-    <h2 id="str"></h2>
+        <div class="form-group">
+            <label for="str">Enter string </label>
+            <input type="text" class="form-control" id="str" required>
+        </div>
+        <div class="form-group">
+            <label for="numb">Enter number </label>
+            <input type="number" class="form-control" id="num" required>
+        </div>
+        <button type="submit" onclick="generateString()" class="btn btn-success">Submit</button>
+    <h2 id="chr"></h2>
     <h2 id="demo"></h2>
     </div>
 <script>
-    let str ="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-    document.getElementById("str").innerHTML="INPUT: "+str
-    function generateString(len) {
+    function generateString() {
+        let len=parseInt(document.getElementById("num").value)
+        let str=document.getElementById("str").value
+        document.getElementById("chr").innerHTML="INPUT: "+str
         let result = ' ';
         const charactersLength = str.length;
         for ( let i = 0; i < len; i++ ) {
             result += str.charAt(Math.floor(Math.random() * charactersLength));
         }
-        document.getElementById("demo").innerHTML="OUTPUT is: "+result
+        if(isNaN(len))
+        {
+            document.getElementById("demo").innerHTML="OUTPUT : Input is invalid"
+        }
+        else{
+            document.getElementById("demo").innerHTML="OUTPUT : "+result
+        }
     }  
-    generateString(5);
 </script>
 </body>
 </html>
